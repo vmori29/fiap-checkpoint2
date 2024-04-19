@@ -14,7 +14,7 @@ Aplicação Java com container para exemplo
 #### Clone
 
 ```
-https://github.com/TiagoAlcan/checkpoint2.git
+https://github.com/vmori29/fiap-checkpoint2.git
 ```
 
 ## Execução
@@ -33,7 +33,7 @@ docker build -t checkpoint2 .
 spring.profiles.active=<prd|dev|stg>
 
 ```
-docker run -d -p 8080:8080 -e PROFILE=<prd|dev|stg> checkpoint2
+docker run -d -p 8080:8080 -e PROFILE=<prd|dev|stg> fiap-checkpoint2
 ```
 
 ## Container Registry
@@ -44,14 +44,14 @@ docker run -d -p 8080:8080 -e PROFILE=<prd|dev|stg> checkpoint2
 * Login
 
 ```
-docker login -u tiagoalcan
+docker login -u vmori29
 ```
 
 * Criar imagem pronta para upload (método 1 - criando nova imagem)
 
 
 ```
-docker build -t tiagoalcan/checkpoint2 .
+docker build -t fiap-checkpoint2 .
 ```
 
 
@@ -59,7 +59,7 @@ docker build -t tiagoalcan/checkpoint2 .
 
 
 ```
-docker tag checkpoint2 tiagoalcan/checkpoint2
+docker tag checkpoint2 vmori29/fiap-checkpoint2
 ```
 
 
@@ -67,43 +67,43 @@ docker tag checkpoint2 tiagoalcan/checkpoint2
 
 
 ```
-docker push tiagoalcan/checkpoint2 
+docker push vmori29/fiap-checkpoint2 
 ```
 
 *Comando docker para executar a aplicação a partir do docker hub com o profile "dev" (desenvolvimento) - H2
 
-- Para acessar colocar as seguintes informções:
+- Para acessar colocar as seguintes informações:
   
 - Username: sa
 - Password: password
 - Url: jdbc:h2:mem:testdb
 
 ```
-docker run -d -p 8080:8080 -e PROFILE=dev tiagoalcan/checkpoint2
+docker run -d -p 8080:8080 -e PROFILE=dev vmori29/fiap-checkpoint2
 ```
 
 *Comando docker para executar a aplicação a partir do docker hub com o profile "prd" (produção) - Oracle SQL developer
 
-- Para acessar colocar as seguintes informções:
+- Para acessar colocar as seguintes informações:
   
-- Username: pf1524
+- Username: rm93121
 - Password: password
 - Url: jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl
 
 ```
-docker run -d -p 8080:8080 -e PROFILE=prd tiagoalcan/checkpoint2 
+docker run -d -p 8080:8080 -e PROFILE=prd vmori29/fiap-checkpoint2 
 ```
 
 *Comando docker para executar a aplicação a partir do docker hub com o profile "stg"(stagging - homologação) - MySQL
 
-- Para acessar colocar as seguintes informções:
+- Para acessar colocar as seguintes informações:
   
 - Username: root
 - Password: root_pwd
 - Url: jdbc:mysql://localhost:3306/rh?createDatabaseIfNotExist=true
 
 ```
-docker run -d -p 8080:8080 -e PROFILE=stg tiagoalcan/checkpoint2 
+docker run -d -p 8080:8080 -e PROFILE=stg vmori29/fiap-checkpoint2 
 ```
 
 #### Navegação
@@ -118,13 +118,12 @@ http://localhost:8080
 - Múltiplos profiles
 - Banco de dados relacional
 
-## Contatos
+## Membros
 
-- Tiago Gomes Alcântara - tiago.gomesalcan@email.com
-- Guilherme Loureiro - guilhermelsba@email.com
+- Victor Mori Kikuchi - vmk0411@gmail.com
 
 ## Referencias
 
-Meu [GitHub](https://github.com/TiagoAlcan)
+Meu [GitHub](https://github.com/vmori29)
 
-Meu [DockerHub](https://hub.docker.com/u/tiagoalcan)
+Meu [DockerHub](https://hub.docker.com/u/vmori29)
